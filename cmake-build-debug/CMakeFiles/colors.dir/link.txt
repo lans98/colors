@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/colors.dir/main.cpp.o  -o colors 

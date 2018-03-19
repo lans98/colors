@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/kevin/Projects/C++/colors/color.hpp
+initializer_list
+-
+stdexcept
+-
+regex
+-
+cmath
+-
+string
+-
+iostream
+-
+algorithm
+-
+numbers.hpp
+/home/kevin/Projects/C++/colors/numbers.hpp
+
+/home/kevin/Projects/C++/colors/main.cpp
+iostream
+-
+color.hpp
+/home/kevin/Projects/C++/colors/color.hpp
+
+/home/kevin/Projects/C++/colors/numbers.hpp
+string
+-
+stdexcept
+-
+
