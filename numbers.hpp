@@ -76,7 +76,7 @@ std::string convert_from_to(std::string number, long basef, long baset) {
 
   std::string cnumber;
   cnumber = convert_to_base10(number, basef);
-  cnumber = convert_from_base10(number, baset);
+  cnumber = convert_from_base10(cnumber, baset);
 
   return cnumber;
 }
