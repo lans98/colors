@@ -18,5 +18,8 @@ int main() {
   color::HSV color5(color1);
   std::cout << color5 << std::endl;
 
+  color::RGB color6(color5);
+  std::cout << color6 << std::endl;
+
   return 0;
 }
