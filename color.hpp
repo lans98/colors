@@ -25,6 +25,8 @@ private:
   unsigned char b;
 
 public:
+  RGB() = default;
+  RGB(const RGB& rgb): r(rgb.r), g(rgb.g), b(rgb.b) {}
 
   RGB(const unsigned char& r, const unsigned char& g, const unsigned char& b):
     r(r), g(g), b(b) {}
@@ -66,12 +68,21 @@ public:
   explicit RGB(const HSV& hsv);
   explicit RGB(const HSL& hsl);
 
+
   friend std::ostream& operator<<(std::ostream& out, const RGB& c) {
     out << "r: " << static_cast<int>(c.r) << ", "
         << "g: " << static_cast<int>(c.g) << ", "
         << "b: " << static_cast<int>(c.b);
 
     return out;
+  }
+
+  std::string to_string() {
+    std::string rgb_str("#");
+    rgb_str += int_to_hex(r);
+    rgb_str += int_to_hex(g);
+    rgb_str += int_to_hex(b);
+    return rgb_str;
   }
 
   unsigned char get_r() const { return r;  }
@@ -87,6 +98,8 @@ private:
   double value;
 
 public:
+  HSV() = default;
+  HSV(const HSV& hsv): hue(hsv.hue), saturation(hsv.saturation), value(hsv.value) {}
 
   HSV(const double& h, const double& s, const double& v): hue(h), saturation(s), value(v) {}
 
@@ -112,6 +125,8 @@ private:
   double lightness;
 
 public:
+  HSL() = default;
+  HSL(const HSL& hsl): hue(hsl.hue), saturation(hsl.saturation), lightness(hsl.lightness) {}
 
   HSL(const double& h, const double& s, const double& l): hue(h), saturation(s), lightness(l) {}
 

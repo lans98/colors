@@ -45,15 +45,15 @@ std::string convert_from_base10(std::string number, long base_number) {
     digit    = inumber % base_number;
     inumber /= base_number;
 
+    if (digit >= base_number)
+      throw std::logic_error("Bad number");
+
     if (digit >= 10 && digit <= 15)
       digit += 55;
     else if (digit >= 0 && digit <= 9)
       digit += 48;
     else
       throw std::logic_error("Unrecognized digit");
-
-    if (digit >= base_number)
-      throw std::logic_error("Bad number");
 
     number.push_back(static_cast<char>(digit));
   }

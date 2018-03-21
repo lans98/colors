@@ -26,19 +26,45 @@ int main() {
   // Testing gradient
   color::RGB colora_rgb("#4100e5");
   color::RGB colorb_rgb("#0300bf");
-  auto gradient_rgb = color::gradient(colora_rgb, colorb_rgb);
-  std::cout << "gradient rgb: " << gradient_rgb << std::endl;
-
-
   color::HSV colora_hsv(colora_rgb);
   color::HSV colorb_hsv(colorb_rgb);
-  auto gradient_hsv = color::gradient(colora_hsv, colorb_hsv);
-  std::cout << "gradient hsv: " << gradient_hsv << std::endl;
-
   color::HSL colora_hsl(colora_rgb);
   color::HSL colorb_hsl(colorb_rgb);
+
+  std::cout << "RGB Testing gradient: \n";
+  std::cout << colora_rgb << '\n';
+  std::cout << colorb_rgb << '\n';
+
+  std::cout << "HSV Testing gradient: \n";
+  std::cout << colora_hsv << '\n';
+  std::cout << colorb_hsv << '\n';
+
+  std::cout << "HSL Testing gradient: \n";
+  std::cout << colora_hsl << '\n';
+  std::cout << colorb_hsl << '\n';
+
+  auto gradient_rgb = color::gradient(colora_rgb, colorb_rgb);
+  std::cout << "gradient rgb: " << gradient_rgb << std::endl;
+  auto gradient_hsv = color::gradient(colora_hsv, colorb_hsv);
+  std::cout << "gradient hsv: " << gradient_hsv << std::endl;
   auto gradient_hsl = color::gradient(colora_hsl, colorb_hsl);
   std::cout << "gradient hsl: " << gradient_hsl << std::endl;
+
+  // Testing gradient steps
+  auto steps_rgb = color::gradient_steps(colora_rgb, colorb_rgb);
+  std::cout << "Gradient steps with RGB: \n";
+  for (auto& x : steps_rgb)
+    std::cout << x << '\n';
+
+  auto steps_hsv = color::gradient_steps(colora_hsv, colorb_hsv);
+  std::cout << "Gradient steps with HSV: \n";
+  for (auto& x : steps_hsv)
+    std::cout << x << '\n';
+
+  auto steps_hsl = color::gradient_steps(colora_hsl, colorb_hsl);
+  std::cout << "Gradient steps with HSL: \n";
+  for (auto& x : steps_hsl)
+    std::cout << x << '\n';
 
   return 0;
 }

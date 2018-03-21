@@ -4,4 +4,7 @@ project(colors)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-add_executable(colors main.cpp color.hpp numbers.hpp)
+include_directories(.)
+
+add_executable(colors main.cpp)
+add_executable(echoterm echo_terminal.cpp)
